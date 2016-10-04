@@ -34,10 +34,12 @@ Class Elo extends PluginBase implements Listener{
     if(!($this->eloyaml->exists("Elo"))){
          $this->eloyaml->set("Elo" , []);
            $this->eloyaml->save();
+            $this->eloyaml->reload();
     }
      if(!($this->eloyaml->Elo->exists("Steve"))){
     $this->eloyaml->Elo->set("Steve", $this->config->get("Starting-Elo"));
     $this->eloyaml->save();
+         $this->eloyaml->reload();
 }
     // Config end
    // Commands start
@@ -57,6 +59,7 @@ Class Elo extends PluginBase implements Listener{
    $setelo = $currentelo + $elo;
     $this->eloyaml->Elo->set($playername, $setelo);
      $this->eloyaml->save();
+       $this->eloyaml->reload();
  }
 }
 
@@ -66,6 +69,7 @@ Class Elo extends PluginBase implements Listener{
      $setelo = $currentelo - $elo;
       $this->eloyaml->Elo->set($playername, $setelo);
         $this->eloyaml->save();
+        $this->eloyaml->reload();
    }
 }
 
@@ -92,6 +96,7 @@ return null;
     if($this->eloyaml->Elo->exists($playername)){
      $this->eloyaml->Elo->set($playername, 0);
      $this->eloyaml->save();
+        $this->eloyaml->reload();
     }
 }
 
