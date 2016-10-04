@@ -1,0 +1,2 @@
+Starting-Elo: 100
+Death-Elo-Loss: 10 #Can be set to 0 for mini games using the API and such
