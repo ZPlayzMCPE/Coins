@@ -22,6 +22,7 @@ class TopEloCommand extends PluginCommand
     public function execute(CommandSender $sender, $currentAlias, array $args)
     {
         if ($this->testPermission($sender)) {
+            $this->main->sendTopEloTo($sender);
         }
     }
 }
