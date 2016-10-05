@@ -101,6 +101,8 @@ return null;
 }
 
   public function createDataFor(String $playername){
-
+   if(!($this->eloyaml->Elo->exists($playername))){
+       $this->eloyaml->Elo->set($playername, $this->config->get("Starting-Elo"));
+   }
   }
 }
