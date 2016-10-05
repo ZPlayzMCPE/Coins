@@ -16,12 +16,20 @@ class SeeEloCommand extends PluginCommand
     {
         parent::__construct($name, $main);
         $this->main = $main;
-        $this->setPermission("addelo.command");
+        $this->setPermission("seeelo.command");
     }
 
     public function execute(CommandSender $sender, $currentAlias, array $args)
     {
         if ($this->testPermission($sender)) {
+            if(!isset($args[0])){
+                $sender->sendMessage(TF::RED."Usage: /seeelo <name>");
+            }
+            if(isset($args[0])) {
+                $name = $args[0];
+                $elo = $this->main->getElo($name);
+                $sender->sendMessage(Elo::prefix.TF::YELLOW.$name." has ".$elo." Elo.");
+            }
         }
     }
 }

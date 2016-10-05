@@ -18,7 +18,7 @@ use elo\EventListener;
 
 Class Elo extends PluginBase implements Listener{
  
- CONST prefix = TF::RED.TF::BOLD."Elo".TF::RESET;
+ CONST prefix = TF::RED.TF::BOLD."Elo ".TF::RESET;
  public $eloyaml;
  public $config;
 

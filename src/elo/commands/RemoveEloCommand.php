@@ -16,12 +16,24 @@ class RemoveEloCommand extends PluginCommand
     {
         parent::__construct($name, $main);
         $this->main = $main;
-        $this->setPermission("addelo.command");
+        $this->setPermission("removeelo.command");
     }
 
     public function execute(CommandSender $sender, $currentAlias, array $args)
     {
         if ($this->testPermission($sender)) {
+            if(!isset($args[0])){
+                $sender->sendMessage(TF::RED."Usage: /removeelo <player> <elo>");
+            }
+
+            if(isset($args[0])) {
+                $name = $args[0];
+                if (isset($args[1])) {
+                    $lol = $args[1];
+                    $elo = (int)$lol;
+                    $this->main->removeElo($name, $elo);
+                }
+            }
         }
     }
 }
