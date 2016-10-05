@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9b937c9-e7e2-4823-9c91-4e4cd3306f2e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/elo/commands/TopEloCommand.php" afterPath="$PROJECT_DIR$/src/elo/commands/TopEloCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/elo/Elo.php" afterPath="$PROJECT_DIR$/src/elo/Elo.php" />
     </list>
     <ignored path="Elo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Elo.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Elo.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/elo/Elo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+            <state relative-caret-position="75">
+              <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
               <folding>
                 <element signature="e#23#56#0#PHP" expanded="true" />
               </folding>
@@ -68,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TopEloCommand.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TopEloCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/elo/commands/TopEloCommand.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -134,8 +133,8 @@
         <option value="$PROJECT_DIR$/src/elo/EventListener.php" />
         <option value="$PROJECT_DIR$/src/elo/commands/SeeEloCommand.php" />
         <option value="$PROJECT_DIR$/src/elo/commands/AddEloCommand.php" />
-        <option value="$PROJECT_DIR$/src/elo/Elo.php" />
         <option value="$PROJECT_DIR$/src/elo/commands/TopEloCommand.php" />
+        <option value="$PROJECT_DIR$/src/elo/Elo.php" />
       </list>
     </option>
   </component>
@@ -243,8 +242,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,11 +329,12 @@
       <workItem from="1475672448696" duration="305000" />
       <workItem from="1475672762211" duration="83000" />
       <workItem from="1475672910644" duration="200000" />
+      <workItem from="1475673492634" duration="46000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3219000" />
+    <option name="totallyTimeSpent" value="3265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1036" height="780" extended-state="0" />
@@ -811,22 +811,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/elo/Elo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
-          <folding>
-            <element signature="e#23#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elo/commands/TopEloCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
           <folding>
             <element signature="e#32#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elo/Elo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+          <folding>
+            <element signature="e#23#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
