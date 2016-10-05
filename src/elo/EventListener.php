@@ -6,6 +6,7 @@ use pocketmine\event\Listener;
 use elo\Elo;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\player\PlayerDeathEvent;
+use pocketmine\event\player\PlayerJoinEvent;
 
 Class EventListener implements Listener{
 
@@ -24,8 +25,8 @@ Class EventListener implements Listener{
          }
      }
 
-    public function onJoin(PlayerDeathEvent $ev){
-        if(!($this->main->eloyaml->Elo->exists($ev->getPlayer()->getName()))){
+    public function onJoin(PlayerJoinEvent $ev){
+        if(!($this->main->eloyaml->exists($ev->getPlayer()->getName()))){
             $this->main->createDataFor($ev->getPlayer()->getName());
         }
     }

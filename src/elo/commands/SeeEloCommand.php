@@ -14,7 +14,7 @@ class SeeEloCommand extends PluginCommand
 
     public function __construct(Elo $main, $name)
     {
-        parent::__construct($main, $name);
+        parent::__construct($name, $main);
         $this->main = $main;
         $this->setPermission("addelo.command");
     }
