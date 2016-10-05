@@ -1,3 +1,5 @@
-Lose-Elo-onDeath: true
 Starting-Elo: 100
+Lose-Elo-onDeath: true
 Death-Elo-Loss: 10 #Can be set to 0 for mini games using the API and such
+Get-Elo-On-Kill: true
+Elo-On-Kill: 100
