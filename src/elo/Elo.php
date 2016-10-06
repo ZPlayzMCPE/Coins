@@ -77,7 +77,7 @@ Class Elo extends PluginBase implements Listener{
 return null;
 }
 
-  public function sendTopEloTo($player, int $amount = 10){
+  public function sendTopEloTo($player, int $amount){
    $array = $this->eloyaml->getAll();
     arsort($array);
       if(!$player instanceof Player) $player = $this->getServer()->getPlayer($player);
