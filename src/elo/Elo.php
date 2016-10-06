@@ -19,7 +19,9 @@ use elo\EventListener;
 Class Elo extends PluginBase implements Listener{
  
  CONST prefix = TF::RED.TF::BOLD."Elo ".TF::RESET;
+    /** @var Config $eloyaml */
  public $eloyaml;
+    /** @var Config $config */
  public $config;
 
    public function onEnable(){
@@ -75,11 +77,12 @@ Class Elo extends PluginBase implements Listener{
 return null;
 }
 
-  public function sendTopEloTo($player){
+  public function sendTopEloTo($player, int $amount = 10){
    $array = $this->eloyaml->getAll();
     arsort($array);
+      if(!$player instanceof Player) $player = $this->getServer()->getPlayer($player);
     $player->sendMessage(self::prefix);
-     for($i = 0; $i < 10; $i++){
+     for($i = 0; $i < $amount; $i++){
        $arraykeys = array_keys($array);
        $arrayvalues = array_values($array);
        $player->sendMessage(TF::RED.($i + 1.)." ".TF::YELLOW.$arraykeys[$i].": ".$arrayvalues[$i]." Elo");
