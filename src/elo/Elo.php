@@ -80,7 +80,6 @@ return null;
   public function sendTopEloTo($player, int $amount){
    $array = $this->eloyaml->getAll();
     arsort($array);
-      if(!$player instanceof Player) $player = $this->getServer()->getPlayer($player);
     $player->sendMessage(self::prefix);
      for($i = 0; $i < $amount; $i++){
        $arraykeys = array_keys($array);
