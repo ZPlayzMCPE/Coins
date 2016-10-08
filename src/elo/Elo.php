@@ -80,10 +80,10 @@ return null;
   public function sendTopEloTo($player, int $amount){
    $array = $this->eloyaml->getAll();
     arsort($array);
-    $player->sendMessage(self::prefix);
-     for($i = 0; $i < $amount; $i++){
        $arraykeys = array_keys($array);
        $arrayvalues = array_values($array);
+    $player->sendMessage(self::prefix);
+     for($i = 0; $i < $amount; $i++){
        $player->sendMessage(TF::RED.($i + 1.)." ".TF::YELLOW.$arraykeys[$i].": ".$arrayvalues[$i]." Elo");
    }
 }
