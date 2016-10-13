@@ -8,4 +8,5 @@ script:
 
 addons:
  artifacts:
-  - "Elo*.phar"
+  paths:
+   - "Elo*.phar"
