@@ -5,6 +5,7 @@ php:
 script:
  - cd /home/travis/build/Pogogo007
  - php Elo/mkplugin.php Elo Elo/src
+ - cd /home/travis/build/Pogogo007/Elo
  - git tag v1.0.0
 
 deploy:
