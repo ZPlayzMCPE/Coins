@@ -9,4 +9,4 @@ script:
 addons:
  artifacts:
   paths:
-   - "Elo*.phar"
+   - $home/travis/build/Pogogo007/Elo/Elo*.phar
