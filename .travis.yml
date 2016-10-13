@@ -3,8 +3,7 @@ php:
  - '7.0'
 
 script:
- - pwd
- - cd /Pogogo007
+ - cd /home/travis/build/Pogogo007
  - php mkplugin.php Elo Elo/src
 
 addons:
