@@ -5,3 +5,11 @@ php:
 script:
  - cd /home/travis/build/Pogogo007
  - php Elo/mkplugin.php Elo Elo/src
+
+deploy:
+  provider: releases
+  file: "Elo*.phar"
+  skip_cleanup: true
+  on:
+    tags: true
+    
