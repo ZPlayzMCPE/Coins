@@ -3,6 +3,7 @@ php:
  - '7.0'
 
 before_script:
+ - git checkout -qf master
  - git remote set-url origin https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
  - git config --global user.email "travis@travis.com"
  - git config --global user.name "Travis"
@@ -13,7 +14,6 @@ script:
  - php Elo/mkplugin.php Elo Elo/src
  - cd /home/travis/build/Pogogo007/Elo
  - mv /home/travis/build/Pogogo007/Elo*.phar /home/travis/build/Pogogo007/Elo/
- - git checkout -qf master
  - git remote set-url origin https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
  - git add Elo*.phar
  - git commit -m "Auto Phar Travis Complete"
