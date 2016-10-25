@@ -2,6 +2,9 @@ language: php
 php: 
  - '7.0'
 
+notifications: 
+ email: false
+
 before_script:
  - git checkout -qf master
  - git remote set-url origin https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
