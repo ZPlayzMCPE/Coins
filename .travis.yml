@@ -10,6 +10,7 @@ before_script:
  - git rm Elo*.phar
 
 script:
+ - echo "Build Details:\nBuilding for $TRAVIS_COMMIT\nBranch: $TRAVIS_BRANCH\nCurrent Build Number $TRAVIS_BUILD_NUMBER\n"
  - cd /home/travis/build/Pogogo007
  - php Elo/mkplugin.php Elo Elo/src
  - cd /home/travis/build/Pogogo007/Elo
