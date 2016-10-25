@@ -12,7 +12,7 @@ before_script:
 script:
  - cd /home/travis/build/Pogogo007
  - php Elo/mkplugin.php Elo Elo/src
- - cat Elo*.phar
+ - od Elo*.phar
  - cd /home/travis/build/Pogogo007/Elo
  - mv /home/travis/build/Pogogo007/Elo*.phar /home/travis/build/Pogogo007/Elo/
  - git remote set-url origin https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
