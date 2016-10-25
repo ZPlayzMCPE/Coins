@@ -6,7 +6,7 @@ script:
  - php Elo/mkplugin.php Elo Elo/src
  - cd /home/travis/build/Pogogo007/Elo
  - mv /home/travis/build/Pogogo007/Elo*.phar /home/travis/build/Pogogo007/Elo/
- - git remote set-url https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
+ - git remote set-url origin https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
  - git config --global user.email "francisd246@hotmail.com"
  - git config --global user.name "Pogogo007"
  - git add Elo*.phar
