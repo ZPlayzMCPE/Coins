@@ -16,5 +16,5 @@ script:
  - mv /home/travis/build/Pogogo007/Elo*.phar /home/travis/build/Pogogo007/Elo/
  - git remote set-url origin https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
  - git add Elo*.phar
- - git commit -m "Auto Phar Travis Complete [ci skip]"
+ - git commit -m "Build Complete for $TRAVIS_COMMIT [ci skip]"
  - git push origin master
