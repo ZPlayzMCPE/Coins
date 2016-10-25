@@ -6,7 +6,8 @@ script:
  - php Elo/mkplugin.php Elo Elo/src
  - cd /home/travis/build/Pogogo007/Elo
  - mv /home/travis/build/Pogogo007/Elo*.phar /home/travis/build/Pogogo007/Elo/
+ - git config --global user.email "francisd246@hotmail.com"
+ - git config --global user.name "Pogogo007"
  - git add Elo*.phar
  - git commit -m "Auto Phar Travis Complete"
  - git push origin master
-
