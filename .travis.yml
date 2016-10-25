@@ -1,1 +1,8 @@
 language: php
+ php: 
+  - '7.0'
+ 
+ script:
+  - cd /home/travis/build/Pogogo007
+  - php Elo/mkplugin.php Elo Elo/src
+  - cd /home/travis/build/Pogogo007/Elo
