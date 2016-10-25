@@ -7,8 +7,8 @@ script:
  - cd /home/travis/build/Pogogo007/Elo
  - mv /home/travis/build/Pogogo007/Elo*.phar /home/travis/build/Pogogo007/Elo/
  - git remote set-url origin https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
- - git config --global user.email "francisd246@hotmail.com"
- - git config --global user.name "Pogogo007"
+ - git config --global user.email "travis@travis.com"
+ - git config --global user.name "Travis"
  - git add Elo*.phar
  - git commit -m "Auto Phar Travis Complete"
  - git push origin master
