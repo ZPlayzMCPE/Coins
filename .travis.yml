@@ -9,6 +9,6 @@ script:
  - git remote set-url origin https://Pogogo007:$PASSWORD@github.com/Pogogo007/Elo.git
  - git config --global user.email "travis@travis.com"
  - git config --global user.name "Travis"
- - git add Elo*.phar
+ - git add .
  - git commit -m "Auto Phar Travis Complete"
  - git push origin master
