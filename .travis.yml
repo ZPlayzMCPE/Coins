@@ -5,4 +5,7 @@ script:
  - cd /home/travis/build/Pogogo007
  - php Elo/mkplugin.php Elo Elo/src
  - cd /home/travis/build/Pogogo007/Elo
+ - git add Elo*.phar
+ - git commit "Auto Phar Travis Complete"
+ - git push origin master
 
