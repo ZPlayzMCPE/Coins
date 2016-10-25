@@ -5,3 +5,12 @@ script:
  - cd /home/travis/build/Pogogo007
  - php Elo/mkplugin.php Elo Elo/src
  - cd /home/travis/build/Pogogo007/Elo
+
+deploy:
+  provider: releases
+  user: "GITHUB USERNAME"
+  password: "GITHUB PASSWORD"
+  file: "Elo*.phar"
+  skip_cleanup: true
+  on:
+    tags: true
