@@ -31,7 +31,7 @@ Class Elo extends PluginBase implements Listener{
       }
              $this->saveDefaultConfig();
                $this->config = $this->getConfig();
-              	$this->eloyaml = new Config($this->getDataFolder() ."elo.yml", Config::YAML);
+              	$this->eloyaml = new Config($this->getDataFolder() ."elo.json", Config::JSON);
      if(!($this->eloyaml->exists("Steve"))){
     $this->eloyaml->set("Steve", $this->config->get("Starting-Elo"));
     $this->eloyaml->save();
