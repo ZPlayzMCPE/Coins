@@ -4,21 +4,3 @@ version: 1.0.0
 api: [2.0.0, 3.0.0-ALPHA6, 3.0.1]
 main: elo\Coins
 description: "The Coins API for your needs!"
-
-commands:
-    coins:
-        description: "Allows you to look at your coins."
-        permission: coins.command
-        default: true
-    removecoins:
-        description: "Allows you to remove a user's coins."
-        default: op
-        permission: removecoins.command
-    addcoins:
-        description: "Allows you to add a user's coins."
-        default: op
-        permission: addcoins.command
-    topcoins:
-        description: "Allows you to check the list of top players with coins"
-        default: true
-        permission: topcoins.command
