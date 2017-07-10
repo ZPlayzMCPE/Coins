@@ -1,24 +1,24 @@
 <?php
 
-namespace elo;
+namespace coins;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
-use elo\commands\EloCommand;
-use elo\commands\AddEloCommand;
-use elo\commands\TopEloCommand;
-use elo\commands\SeeEloCommand;
-use elo\commands\RemoveEloCommand;
+use elo\commands\CoinsCommand;
+use elo\commands\AddCoinsCommand;
+use elo\commands\TopCoinsCommand;
+use elo\commands\SeeCoinsCommand;
+use elo\commands\RemoveCoinsCommand;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\Listener;
 use pocketmine\command\Command;
 use pocketmine\Player;
 use pocketmine\plugin\Plugin;
-use elo\EventListener;
+use coins\EventListener;
 
 Class Elo extends PluginBase implements Listener{
  
- CONST prefix = TF::RED.TF::BOLD."Elo ".TF::RESET;
+ CONST prefix = TF::RED.TF::BOLD."coins ".TF::RESET;
     /** @var Config $eloyaml */
  public $eloyaml;
     /** @var Config $config */
@@ -31,74 +31,74 @@ Class Elo extends PluginBase implements Listener{
       }
              $this->saveDefaultConfig();
                $this->config = $this->getConfig();
-              	$this->eloyaml = new Config($this->getDataFolder() ."elo.json", Config::JSON);
-     if(!($this->eloyaml->exists("Steve"))){
-    $this->eloyaml->set("Steve", $this->config->get("Starting-Elo"));
-    $this->eloyaml->save();
-         $this->eloyaml->reload();
+              	$this->coinsyaml = new Config($this->getDataFolder() ."coins.json", Config::JSON);
+     if(!($this->coinsyaml->exists("Steve"))){
+    $this->coinsyaml->set("Steve", $this->config->get("Starting-coins"));
+    $this->coinsyaml->save();
+         $this->coinsyaml->reload();
 }
     // Config end
    // Commands start
    $server = $this->getServer();
-    $server->getCommandMap()->register("elo", new EloCommand($this, "elo"));
-    $server->getCommandMap()->register("topelo", new TopEloCommand($this, "topelo"));
-    $server->getCommandMap()->register("seeelo", new SeeEloCommand($this, "seeelo"));
-    $server->getCommandMap()->register("addelo", new AddEloCommand($this, "addelo"));
-    $server->getCommandMap()->register("removeelo", new RemoveEloCommand($this, "removeelo"));
+    $server->getCommandMap()->register("coins", new CoinsCommand($this, "coins"));
+    $server->getCommandMap()->register("topcoins", new TopCoinsCommand($this, "topcoins"));
+    $server->getCommandMap()->register("seecoins", new SeeCoinsCommand($this, "seecoins"));
+    $server->getCommandMap()->register("addcoins", new AddCoinsCommand($this, "addcoins"));
+    $server->getCommandMap()->register("removecoins", new RemoveCoinsCommand($this, "removecoins"));
   //Commands end
      $server->getPluginManager()->registerEvents(new EventListener($this), $this);
    }
 
-  public function addElo(String $playername, int $elo){
-   if($this->eloyaml->exists($playername)){
-   $currentelo = $this->eloyaml->get($playername);
-   $setelo = $currentelo + $elo;
-    $this->eloyaml->set($playername, $setelo);
-     $this->eloyaml->save();
-       $this->eloyaml->reload();
+  public function addcoins(String $playername, int $coins){
+   if($this->coinsyaml->exists($playername)){
+   $currentcoins = $this->coinsyaml->get($playername);
+   $setcoins = $currentcoins + $coins;
+    $this->coinsyaml->set($playername, $setcoins);
+     $this->coinsyaml->save();
+       $this->coinsyaml->reload();
  }
 }
 
-   public function removeElo(String $playername, int $elo){
-    if($this->eloyaml->exists($playername)){
-     $currentelo = $this->eloyaml->get($playername);
-     $setelo = $currentelo - $elo;
-      $this->eloyaml->set($playername, $setelo);
-        $this->eloyaml->save();
-        $this->eloyaml->reload();
+   public function removecoins(String $playername, int $coins){
+    if($this->coinsyaml->exists($playername)){
+     $currentcoins = $this->coinsyaml->get($playername);
+     $setcoins = $currentcoins - $coins;
+      $this->coinsyaml->set($playername, $setcoins);
+        $this->coinsyaml->save();
+        $this->coinsyaml->reload();
    }
 }
 
-   public function getElo(String $playername){
-    if($this->eloyaml->exists($playername)){
-      $elo = $this->eloyaml->get($playername);
-        return $elo;
+   public function getcoins(String $playername){
+    if($this->coinsyaml->exists($playername)){
+      $elo = $this->coinsyaml->get($playername);
+        return $coins;
     }
 return null;
 }
 
-  public function sendTopEloTo($player, int $amount){
+  public function sendTopcoinsTo($player, int $amount){
    $array = $this->eloyaml->getAll();
     arsort($array);
        $arraykeys = array_keys($array);
        $arrayvalues = array_values($array);
     $player->sendMessage(self::prefix);
      for($i = 0; $i < $amount; $i++){
-       $player->sendMessage(TF::RED.($i + 1.)." ".TF::YELLOW.$arraykeys[$i].": ".$arrayvalues[$i]." Elo");
+       $player->sendMessage(TF::RED.($i + 1.)." ".TF::YELLOW.$arraykeys[$i].": ".$arrayvalues[$i]." coins");
    }
 }
 
-   public function resetElo(String $playername){
-    if($this->eloyaml->exists($playername)){
-     $this->eloyaml->set($playername, 0);
-     $this->eloyaml->save();
-        $this->eloyaml->reload();
+   public function resetCoins(String $playername){
+    if($this->coinsyaml->exists($playername)){
+     $this->coinsyaml->set($playername, 0);
+     $this->coinsyaml->save();
+        $this->coinsyaml->reload();
     }
 }
 
   public function createDataFor(String $playername){
-   if(!($this->eloyaml->exists($playername))){
-       $this->eloyaml->set($playername, $this->config->get("Starting-Elo"));
+   if(!($this->coinsyaml->exists($playername))){
+       $this->coinsyaml->set($playername, $this->config->get("Starting-coins"));
    }
   }
 }
