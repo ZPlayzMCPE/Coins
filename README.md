@@ -1,15 +1,15 @@
-# Elo
-## The Elo plugin for all your needs! With an api
+# Coins
+## The Coins plugin for all your needs! With an api
 
 # Commands:
-## /elo
-### See your own elo
-## /addelo name elo
-### Add elo to a player
-## /removeelo name elo
-### Remove elo from a player
-## /seeelo name
-### See another players elo
-## /topelo
-### Find out who have the most elo on the server
+## /coins
+### See how much coins you hwve.
+## /addcoins <player name> <coins>
+### Add coi s to a player
+## /removecoins <player name> <coins>
+### Remove coins from a player
+## /seecoins <player name>
+### See another players coins
+## /topcoins
+### Find out who have the most coins on the server
 
