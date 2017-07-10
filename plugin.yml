@@ -8,21 +8,17 @@ description: "The Coins API for your needs!"
 commands:
     coins:
         description: "Allows you to look at your coins."
-        usage: "/coins"
         permission: coins.command
         default: true
     removecoins:
-        description: "Allows you to remove a user's coins.
-        usage: "/removecoins"
+        description: "Allows you to remove a user's coins."
         default: op
         permission: removecoins.command
     addcoins:
         description: "Allows you to add a user's coins."
-        usage: "/addcoins"
         default: op
         permission: addcoins.command
     topcoins:
         description: "Allows you to check the list of top players with coins"
-        usage: "/topcoins"
         default: true
         permission: topcoins.command
