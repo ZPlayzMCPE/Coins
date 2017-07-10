@@ -1,6 +1,6 @@
 <?php
 
-namespace coins;
+namespace elo;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
@@ -71,7 +71,7 @@ Class Coins extends PluginBase implements Listener{
 
    public function getcoins(String $playername){
     if($this->coinsyaml->exists($playername)){
-      $elo = $this->coinsyaml->get($playername);
+      $coins = $this->coinsyaml->get($playername);
         return $coins;
     }
 return null;
