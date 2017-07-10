@@ -28,7 +28,7 @@ class SeeCoinsCommand extends PluginCommand
             if(isset($args[0])) {
                 $name = $args[0];
                 $coins = $this->main->getCoins($name);
-                $sender->sendMessage(Elo::prefix.TF::YELLOW.$name." has ".$coins." Coins.");
+                $sender->sendMessage(Coins::prefix.TF::YELLOW.$name." has ".$coins." Coins.");
             }
         }
     }
