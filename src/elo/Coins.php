@@ -16,11 +16,11 @@ use pocketmine\Player;
 use pocketmine\plugin\Plugin;
 use coins\EventListener;
 
-Class Elo extends PluginBase implements Listener{
+Class Coins extends PluginBase implements Listener{
  
  CONST prefix = TF::RED.TF::BOLD."coins ".TF::RESET;
     /** @var Config $eloyaml */
- public $eloyaml;
+ public $coinsyaml;
     /** @var Config $config */
  public $config;
 
