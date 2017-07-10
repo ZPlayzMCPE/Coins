@@ -1,10 +1,10 @@
-#Elo The Player Starts With
-Starting-Elo: 100
-# Choose if elo loss on death
-Lose-Elo-onDeath: true
-# Amount of Elo Lost on Death
-Death-Elo-Loss: 10 #Can be set to 0 for mini games using the API and such
-# Choose if win elo on kill
-Get-Elo-On-Kill: true
-# Amount of Elo Gained on Kill
-Elo-On-Kill: 100
+#Coins The Player Starts With
+Starting-Coins: 100
+# Choose if Coins loss on death
+Lose-Coins-onDeath: true
+# Amount of Coins Lost on Death
+Death-Coins-Loss: 10 #Can be set to 0 for mini games using the API and such
+# Choose if win coins on kill
+Get-Coins-On-Kill: true
+# Amount of Coins Gained on Kill
+Coins-On-Kill: 100
