@@ -30,7 +30,7 @@ class AddCoinsCommand extends PluginCommand {
               if(isset($args[1])){
                  $lol = $args[1];
                   $coins = (int)$lol;
-                   $this->main->addElo($name, $coins);
+                   $this->main->addCoins($name, $coins);
                     $sender->sendMessage(Coins::prefix.TF::GREEN."Successfully added ".$coins." Coins to Player ".$name);
                 }
            }
