@@ -49,7 +49,7 @@ Class Coins extends PluginBase implements Listener{
      $server->getPluginManager()->registerEvents(new EventListener($this), $this);
    }
 
-  public function addcoins(String $playername, int $coins){
+  public function addCoins(String $playername, int $coins){
    if($this->coinsyaml->exists($playername)){
    $currentcoins = $this->coinsyaml->get($playername);
    $setcoins = $currentcoins + $coins;
@@ -59,7 +59,7 @@ Class Coins extends PluginBase implements Listener{
  }
 }
 
-   public function removecoins(String $playername, int $coins){
+   public function removeCoins(String $playername, int $coins){
     if($this->coinsyaml->exists($playername)){
      $currentcoins = $this->coinsyaml->get($playername);
      $setcoins = $currentcoins - $coins;
@@ -69,7 +69,7 @@ Class Coins extends PluginBase implements Listener{
    }
 }
 
-   public function getcoins(String $playername){
+   public function getCoins(String $playername){
     if($this->coinsyaml->exists($playername)){
       $coins = $this->coinsyaml->get($playername);
         return $coins;
@@ -77,14 +77,14 @@ Class Coins extends PluginBase implements Listener{
 return null;
 }
 
-  public function sendTopcoinsTo($player, int $amount){
+  public function sendTopCoinsTo($player, int $amount){
    $array = $this->coinsyaml->getAll();
     arsort($array);
        $arraykeys = array_keys($array);
        $arrayvalues = array_values($array);
     $player->sendMessage(self::prefix);
      for($i = 0; $i < $amount; $i++){
-       $player->sendMessage(TF::RED.($i + 1.)." ".TF::YELLOW.$arraykeys[$i].": ".$arrayvalues[$i]." coins");
+       $player->sendMessage(TF::RED.($i + 1.)." ".TF::YELLOW.$arraykeys[$i].": ".$arrayvalues[$i]." Coins");
    }
 }
 
