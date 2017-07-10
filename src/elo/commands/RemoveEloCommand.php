@@ -4,26 +4,26 @@ namespace elo\commands;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\PluginCommand;
-use elo\Elo;
+use elo\Coins;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 
-class RemoveEloCommand extends PluginCommand
+class RemoveCoinsCommand extends PluginCommand
 {
     private $main;
 
-    public function __construct(Elo $main, $name)
+    public function __construct(Coins $main, $name)
     {
         parent::__construct($name, $main);
         $this->main = $main;
-        $this->setPermission("removeelo.command");
+        $this->setPermission("removecoins.command");
     }
 
     public function execute(CommandSender $sender, $currentAlias, array $args)
     {
         if ($this->testPermission($sender)) {
             if(!isset($args[0])){
-                $sender->sendMessage(TF::RED."Usage: /removeelo <player> <elo>");
+                $sender->sendMessage(TF::RED."Usage: /removecoins <player> <coins>");
             }
 
             if(isset($args[0])) {
@@ -31,7 +31,7 @@ class RemoveEloCommand extends PluginCommand
                 if (isset($args[1])) {
                     $lol = $args[1];
                     $elo = (int)$lol;
-                    $this->main->removeElo($name, $elo);
+                    $this->main->removeCoins($name, $elo);
                 }
             }
         }
