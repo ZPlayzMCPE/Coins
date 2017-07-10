@@ -22,8 +22,8 @@ Class EventListener implements Listener{
 
      public function onDeath(PlayerDeathEvent $ev){
          if($this->main->config->get("Lose-Coins-onDeath") === true){
-             $eloloss = $this->main->config->get("Death-Coins-Loss");
-             $this->main->removeElo($ev->getPlayer()->getName(), $eloloss);
+             $coinsloss = $this->main->config->get("Death-Coins-Loss");
+             $this->main->removecoins($ev->getPlayer()->getName(), $coinsloss);
          }
          if($this->main->config->get("Get-Coins-On-Kill") === true){
              $cause = $ev->getPlayer()->getLastDamageCause();
