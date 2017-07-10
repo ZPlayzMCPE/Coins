@@ -1,6 +1,6 @@
 <?php
 
-namespace elo;
+namespace Elo;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
