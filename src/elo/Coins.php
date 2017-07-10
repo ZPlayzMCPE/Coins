@@ -78,7 +78,7 @@ return null;
 }
 
   public function sendTopcoinsTo($player, int $amount){
-   $array = $this->eloyaml->getAll();
+   $array = $this->coinsyaml->getAll();
     arsort($array);
        $arraykeys = array_keys($array);
        $arrayvalues = array_values($array);
