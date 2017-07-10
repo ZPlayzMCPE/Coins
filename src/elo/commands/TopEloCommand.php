@@ -4,25 +4,25 @@ namespace elo\commands;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\PluginCommand;
-use elo\Elo;
+use elo\Coins;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 
-class TopEloCommand extends PluginCommand
+class TopCoinsCommand extends PluginCommand
 {
     private $main;
 
-    public function __construct(Elo $main, $name)
+    public function __construct(Coins $main, $name)
     {
         parent::__construct($name, $main);
         $this->main = $main;
-        $this->setPermission("addelo.command");
+        $this->setPermission("topcoins.command");
     }
 
     public function execute(CommandSender $sender, $currentAlias, array $args)
     {
         if ($this->testPermission($sender)) {
-            $this->main->sendTopEloTo($sender, 10);
+            $this->main->sendTopcoinsTo($sender, 10);
         }
     }
 }
