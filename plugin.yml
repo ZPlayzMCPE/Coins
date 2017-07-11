@@ -6,16 +6,12 @@ main: elo\Coins
 description: "The Coins API for your needs!"
 commands:
     coins:
-        usage: /coins
         description: Allows you to see your own coins.
     addcoins:
-        usage: /addcoins <player> <coins>
         description: Allows you to gain coins.
     removecoins:
-        usage: /removecoins <player> <coins>
         description: Allows you to remove a user's coins.
     topcoins.command:
-        usage: /topcoins
         description: Allows you to see the top coins on the server.
 permissions:
     coins.command:
