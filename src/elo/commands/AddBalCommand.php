@@ -4,7 +4,7 @@ namespace elo\commands;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\PluginCommand;
-use elo\Coins;
+use elo\Bal;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 
