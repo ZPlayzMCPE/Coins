@@ -4,11 +4,11 @@ namespace elo\commands;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\PluginCommand;
-use elo\Coins;
+use elo\Bal;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 
-class SeeCoinsCommand extends PluginCommand
+class SeeBalCommand extends PluginCommand
 {
     private $main;
 
@@ -16,19 +16,19 @@ class SeeCoinsCommand extends PluginCommand
     {
         parent::__construct($name, $main);
         $this->main = $main;
-        $this->setPermission("seecoins.command");
+        $this->setPermission("seebal.command");
     }
 
     public function execute(CommandSender $sender, $currentAlias, array $args)
     {
         if ($this->testPermission($sender)) {
             if(!isset($args[0])){
-                $sender->sendMessage(TF::RED."Usage: /seecoins <name>");
+                $sender->sendMessage(TF::RED."Usage: /seebal <name>");
             }
             if(isset($args[0])) {
                 $name = $args[0];
-                $coins = $this->main->getCoins($name);
-                $sender->sendMessage(Coins::prefix.TF::YELLOW.$name." has ".$coins." Coins.");
+                $coins = $this->main->getBal($name);
+                $sender->sendMessage(Balance::prefix.TF::YELLOW.$name." has ".$money." Balance.");
             }
         }
     }
