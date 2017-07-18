@@ -18,7 +18,7 @@ use elo\EventListener;
 
 Class Coins extends PluginBase implements Listener{
  
- CONST prefix = TF::RED.TF::BOLD."Coins ".TF::RESET;
+ CONST prefix = TF::GREEN.TF::BOLD."Balance ".TF::RESET;
     /** @var Config $coinsyaml */
  public $coinsyaml;
     /** @var Config $config */
@@ -33,35 +33,35 @@ Class Coins extends PluginBase implements Listener{
                $this->config = $this->getConfig();
               	$this->coinsyaml = new Config($this->getDataFolder() ."coins.json", Config::JSON);
      if(!($this->coinsyaml->exists("Steve"))){
-    $this->coinsyaml->set("Steve", $this->config->get("Starting-coins"));
+    $this->coinsyaml->set("Steve", $this->config->get("Starting-Money"));
     $this->coinsyaml->save();
          $this->coinsyaml->reload();
 }
     // Config end
    // Commands start
    $server = $this->getServer();
-    $server->getCommandMap()->register("coins", new CoinsCommand($this, "coins"));
-    $server->getCommandMap()->register("topcoins", new TopCoinsCommand($this, "topcoins"));
-    $server->getCommandMap()->register("seecoins", new SeeCoinsCommand($this, "seecoins"));
-    $server->getCommandMap()->register("addcoins", new AddCoinsCommand($this, "addcoins"));
-    $server->getCommandMap()->register("removecoins", new RemoveCoinsCommand($this, "removecoins"));
+    $server->getCommandMap()->register("bal", new CoinsCommand($this, "bal"));
+    $server->getCommandMap()->register("baltop", new TopCoinsCommand($this, "baltop"));
+    $server->getCommandMap()->register("seebal", new SeeCoinsCommand($this, "seebal"));
+    $server->getCommandMap()->register("addbal", new AddCoinsCommand($this, "addbal"));
+    $server->getCommandMap()->register("removebal", new RemoveCoinsCommand($this, "removebal"));
   //Commands end
      $server->getPluginManager()->registerEvents(new EventListener($this), $this);
    }
 
-  public function addCoins(String $playername, int $coins){
+  public function addBal(String $playername, int $money){
    if($this->coinsyaml->exists($playername)){
    $currentcoins = $this->coinsyaml->get($playername);
-   $setcoins = $currentcoins + $coins;
+   $setBal = $currentBal + $money;
     $this->coinsyaml->set($playername, $setcoins);
      $this->coinsyaml->save();
        $this->coinsyaml->reload();
  }
 }
 
-   public function removeCoins(String $playername, int $coins){
+   public function removeBal(String $playername, int $money){
     if($this->coinsyaml->exists($playername)){
-     $currentcoins = $this->coinsyaml->get($playername);
+     $currentbal = $this->coinsyaml->get($playername);
      $setcoins = $currentcoins - $coins;
       $this->coinsyaml->set($playername, $setcoins);
         $this->coinsyaml->save();
@@ -69,26 +69,26 @@ Class Coins extends PluginBase implements Listener{
    }
 }
 
-   public function getCoins(String $playername){
+   public function getBal(String $playername){
     if($this->coinsyaml->exists($playername)){
       $coins = $this->coinsyaml->get($playername);
-        return $coins;
+        return $money;
     }
 return null;
 }
 
-  public function sendTopCoinsTo($player, int $amount){
+  public function sendTopBalTo($player, int $amount){
    $array = $this->coinsyaml->getAll();
     arsort($array);
        $arraykeys = array_keys($array);
        $arrayvalues = array_values($array);
     $player->sendMessage(self::prefix);
      for($i = 0; $i < $amount; $i++){
-       $player->sendMessage(TF::RED.($i + 1.)." ".TF::YELLOW.$arraykeys[$i].": ".$arrayvalues[$i]." Coins");
+       $player->sendMessage(TF::GREEN.($i + 1.)." ".TF::YELLOW.$arraykeys[$i].": ".$arrayvalues[$i]." Balance");
    }
 }
 
-   public function resetCoins(String $playername){
+   public function resetBal(String $playername){
     if($this->coinsyaml->exists($playername)){
      $this->coinsyaml->set($playername, 0);
      $this->coinsyaml->save();
@@ -98,7 +98,7 @@ return null;
 
   public function createDataFor(String $playername){
    if(!($this->coinsyaml->exists($playername))){
-       $this->coinsyaml->set($playername, $this->config->get("Starting-coins"));
+       $this->coinsyaml->set($playername, $this->config->get("Starting-Money"));
    }
   }
 }
